@@ -1,0 +1,505 @@
+/* TODO TRANSISTION SMOOTH */
+/* TODO HOVER && SELECTED ELEMENTS CHANGES */
+/* TODO Selected username and password */
+/* TODO Decide Color of Coffee Icon or just removing it */
+/* TODO Fill in empty intro section with something */
+/* TODO Hover Button's Log In && Sign Up Free && Let's Get Started! */
+/* TODO Fill in empty intro section with something */
+body {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1c1e1f;
+    color: #f0ece3;
+}
+
+nav {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2%;
+    padding-bottom: 0.1%;
+}
+.business-name svg {
+    width: 55px;
+    fill: #f0ece3;
+    height: 50px;
+}
+.exitoutofframe {
+    position: relative;
+    right: -307px;
+    width: 36px;
+    top: 8px;
+    display: inline-block;
+    left: 77px;
+    background: transparent;
+    border: none;
+    color: #bbb;
+}
+.exitoutofframe svg {
+    pointer-events: none;
+}
+.signup,
+.login {
+    font-family: "Montserrat", sans-serif;
+    border: 1px solid transparent;
+    border-radius: 0.3em;
+    font-size: 17px;
+    padding: 7px 12px 7px 12px;
+    margin-right: 1.5%;
+    margin-left: 1.5%;
+    color: #f0ece3;
+}
+.signup {
+    margin-right: 3.5%;
+    background-color: #7a777791;
+    margin-right: 5%;
+}
+.login {
+    background-color: transparent;
+    border: 1px solid #4a4035;
+}
+.userCreationForm {
+    font-family: "Montserrat", sans-serif;
+    background-color: #1c1e1f;
+    border: 1px solid black;
+    border-radius: 0.6em;
+    min-width: 350px;
+    max-width: 350px;
+    margin-top: 136px;
+    height: 440px;
+    align-self: center;
+    margin-right: 5%;
+    margin-left: 10%;
+    flex: 1;
+    text-align: center;
+    line-height: 2;
+    font-size: 23px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+h1 {
+    font-family: "Galada", cursive;
+    flex: 1;
+    margin: 0;
+    font-size: 40px;
+    padding-left: 2.5%;
+
+    text-shadow: 2px 2px #4a4035;
+}
+.intro-img {
+    background-color: #a5b1c2;
+}
+.gif {
+    width: 20%;
+    height: 20%;
+}
+.intro {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("coffee-shop.webp");
+    box-sizing: border-box;
+    min-height: 700px;
+    margin-top: -125px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.goals {
+    padding: 20px;
+    position: relative;
+    font-size: 42px;
+    right: 0px;
+    width: 36%;
+
+    left: 20%;
+    top: 180px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    max-height: 60px;
+    border: 1px solid transparent;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+}
+.gif {
+    flex: 0.4;
+    padding: 20px;
+}
+.img-container {
+    display: flex;
+    margin-top: -184px;
+    z-index: 1;
+    position: relative;
+}
+.coffee {
+    max-width: 30%;
+}
+.page2 {
+    text-align: center;
+}
+h2 {
+    display: inline-block;
+    padding-top: 30px;
+    font-size: 40px;
+    text-shadow: 2px 2px #0000008b;
+}
+.rounded {
+    border-top: 3px solid #968777;
+    max-width: 60%;
+}
+/* .coffee-svgs {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+} */
+.coffee-svgs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.coffee-svgs .dot svg {
+    max-width: 40%;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+    bottom: 100px;
+}
+.dot {
+    flex: 0 0 calc(20%);
+    max-height: 300px;
+    min-width: 300px;
+    background-color: #bbb;
+    border-radius: 50%;
+    margin-bottom: 10em;
+    margin-top: 3em;
+}
+.dot p {
+    position: relative;
+    top: -200px;
+    padding: 10px;
+    background-color: #37373759;
+    border: 1px solid transparent;
+    border-radius: 0.3em;
+    box-shadow: 3px 3px 3px 1px #000000;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+/* input {
+    font-family: "Montserrat", sans-serif;
+    border: 1px solid rgb(55, 60, 62);
+    border-radius: 0.4em;
+    background-color: #1a1915;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-right: 7px;
+    padding-left: 37px;
+    font-size: 20px;
+    color: #f0ece3;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    width: 216.667px;
+} */
+.form-control {
+    font-family: "Montserrat", sans-serif;
+    border: 1px solid rgb(55, 60, 62);
+    border-radius: 0.4em;
+    background-color: #41454787;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-right: 7px;
+    padding-left: 37px;
+    font-size: 20px;
+    color: #f0ece3;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    width: 216.667px;
+}
+
+.svg-fill {
+    fill: white;
+}
+.svg-unfill {
+    fill: #626262;
+}
+/* input:focus {
+    border: 0px 0px 1px 0px solid rgb(55, 60, 62);
+    border-color: #767676;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+        0 0 4px rgba(235, 235, 235, 0.6);
+
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+        0 0 4px rgba(235, 235, 235, 0.6);
+} */
+
+option {
+    width: 100px;
+}
+input:focus + .floating-label,
+select:focus + .floating-label,
+.valid {
+    top: -1px;
+    bottom: 35px;
+    left: 20px;
+    font-size: 11px;
+    opacity: 1;
+    background: #1c1e1f;
+    height: 17.6px;
+    margin-right: -1px;
+    padding: 2px 4px;
+    border-radius: 0.3em;
+}
+input:focus,
+input:hover {
+    background: #646c6f87;
+}
+.floating-label {
+    position: absolute;
+    pointer-events: none;
+    transition: 0.3s ease all;
+    margin-left: 15px;
+    color: #c3c3c3;
+}
+
+input::placeholder {
+    color: #f0ece36b;
+}
+.passwordSection,
+.loginSection,
+.firstNameSection,
+.lastNameSection,
+.countrySection {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    position: relative;
+    margin: 2.5px 0px;
+    font-size: 16px;
+}
+.countrySection select {
+    width: 238.267px;
+}
+.countrySection option {
+    font-size: 15px;
+    background-color: #2f3234;
+}
+.form-control.sign {
+    padding: 4px 10px;
+    padding-top: 10px;
+}
+.loginSection svg,
+.passwordSection svg {
+    margin-right: -30px;
+}
+/* .loginSection {
+    margin: 5px 0px;
+} */
+.container-pw-reset-submit {
+    display: flex;
+}
+.pw-reset {
+    font-size: 12px;
+    width: 300px;
+    margin-top: 60px;
+}
+.pw-reset a {
+    padding-left: 10px;
+}
+.submit-button {
+    font-family: "Montserrat", sans-serif;
+    background-color: rgb(40, 138, 74);
+    border-radius: 0.3em;
+    padding: 6px 10px 6px 14px;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    align-self: flex-end;
+    margin-top: 10px;
+    margin-right: 50px;
+    cursor: pointer;
+}
+.login-text,
+.previous-text {
+    margin-right: 4px;
+    font-size: 15px;
+    color: #1c1e1f;
+    font-weight: 700;
+    font-size: 19px;
+}
+.fa-coffee {
+    margin-bottom: -2px;
+}
+.fa-coffee > path:nth-child(1) {
+    color: #44311ff8;
+}
+.options-section p {
+    font-size: 15px;
+    line-height: 12px;
+    width: 100%;
+    color: #f0ece3;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+.options-section p::before,
+.options-section p::after {
+    position: relative;
+    content: "";
+    border-top: 2px solid #968777;
+    top: -5px;
+    width: 113px;
+    display: inline-block;
+}
+.options-section p::before {
+    left: -5px;
+}
+.options-section p::after {
+    right: -5px;
+}
+
+.btnsection {
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.facebookbtn {
+    position: relative;
+    background-color: transparent;
+    width: 39px;
+    fill: #004daa;
+    border: none;
+    border-radius: 0.2em;
+    padding: 0;
+    cursor: pointer;
+    transition: 0.3s, transform 0.3s;
+}
+.googlebtn {
+    background-color: #1c1e1f;
+    border: none;
+    padding: 0;
+    width: 38px;
+    cursor: pointer;
+    transition: 0.3s, transform 0.3s;
+}
+.githubbtn {
+    background-color: transparent;
+    width: 40px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: 0.3s, transform 0.3s;
+}
+.twitterbtn {
+    background-color: transparent;
+    width: 39px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: 0.3s, transform 0.3s;
+}
+.twitterbtn:hover,
+.githubbtn:hover,
+.googlebtn:hover,
+.facebookbtn:hover {
+    transform: scale(1.2);
+}
+.exitoutofframe.sign {
+    left: 93px;
+}
+.fa-angle-right,
+.fa-angle-left {
+    width: 14px;
+    height: 28px;
+    color: #1c1e1f;
+}
+.fa-angle-left {
+    padding-right: 5px;
+}
+.options-section.sign > p {
+    margin-top: 20px;
+}
+.pw-reset.sign {
+    margin-top: 8px;
+}
+.submit-button.sign {
+    font-family: "Montserrat", sans-serif;
+    background-color: rgb(40, 138, 74);
+    border-radius: 0.3em;
+    padding: 2px 12px 2px 12px;
+    border: 1px solid transparent;
+    margin: 0px;
+    cursor: pointer;
+}
+.previous-button {
+    font-family: "Montserrat", sans-serif;
+    background-color: rgb(40, 138, 74);
+    border-radius: 0.3em;
+    padding: 2px 12px 2px 12px;
+    border: 1px solid transparent;
+    margin: 0px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    align-self: flex-end;
+}
+.submit-button-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    flex-direction: row-reverse;
+    margin-top: 10px;
+}
+.pagination-container.sign {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+.dot.sign {
+    display: inline-block;
+    min-width: 50px;
+    background-color: #41454787;
+    border-radius: 50%;
+    margin-bottom: 0px;
+    line-height: 1;
+    margin-top: 0px;
+    flex: 0;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    min-width: 43px;
+    margin: 10px 15px;
+}
+@media screen and (max-width: 1200px) {
+    .goals {
+        font-size: 33px;
+        left: 10%;
+    }
+}
+@media screen and (max-width: 800px) {
+    .business-name {
+        font-size: 33px;
+        line-height: 1.2;
+    }
+    .intro {
+        margin-top: -137px;
+    }
+    .goals {
+        display: none;
+    }
+}
+@media screen and (max-width: 500px) {
+    .business-name > svg {
+        display: none;
+    }
+}
