@@ -144,10 +144,12 @@ function showSignupScreen(event) {
     let passwordSection = document.createElement("div");
     let passInput = document.createElement("input");
     let passFloatText = document.createElement("span");
+    let passShowButton = document.createElement("button");
     // * Password Section 2
     let passwordSection2 = document.createElement("div");
     let passInput2 = document.createElement("input");
     let passFloatText2 = document.createElement("span");
+    let passShowButton2 = document.createElement("button");
     //* Sign in Section
     let SubmitbuttonContainer = document.createElement("div");
     let containerPasswordSubmit = document.createElement("div");
@@ -181,9 +183,7 @@ function showSignupScreen(event) {
         '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 400 400" style="enable-background:new 0 0 400 400;" xml:space="preserve"><style type="text/css">.st0{fill:#1DA1F2;}.st1{fill:#FFFFFF;}</style><g id="Dark_Blue"><circle class="st0" cx="200" cy="200" r="200"/></g><g id="Logo__x2014__FIXED"><path class="st1" d="M163.4,305.5c88.7,0,137.2-73.5,137.2-137.2c0-2.1,0-4.2-0.1-6.2c9.4-6.8,17.6-15.3,24.1-25c-8.6,3.8-17.9,6.4-27.7,7.6c10-6,17.6-15.4,21.2-26.7c-9.3,5.5-19.6,9.5-30.6,11.7c-8.8-9.4-21.3-15.2-35.2-15.2c-26.6,0-48.2,21.6-48.2,48.2c0,3.8,0.4,7.5,1.3,11c-40.1-2-75.6-21.2-99.4-50.4c-4.1,7.1-6.5,15.4-6.5,24.2c0,16.7,8.5,31.5,21.5,40.1c-7.9-0.2-15.3-2.4-21.8-6c0,0.2,0,0.4,0,0.6c0,23.4,16.6,42.8,38.7,47.3c-4,1.1-8.3,1.7-12.7,1.7c-3.1,0-6.1-0.3-9.1-0.9c6.1,19.2,23.9,33.1,45,33.5c-16.5,12.9-37.3,20.6-59.9,20.6c-3.9,0-7.7-0.2-11.5-0.7C110.8,297.5,136.2,305.5,163.4,305.5"/></g></svg>';
 
     SignupScreen.innerText = "Sign Up";
-
     submitButtonText.innerText = "Next";
-
     optionText.innerText = "Or";
     passwordResetHyperlink.href = "#";
     passwordResetHyperlink.innerHTML = "Click Here";
@@ -193,7 +193,9 @@ function showSignupScreen(event) {
     passInput.type = "password";
     passInput2.type = "password";
     forgetPasswordLink.innerHTML = "Forget your Password?";
-
+    passShowButton.innerHTML = "Show";
+    passShowButton2.innerHTML = "Show";
+    // * CSS Class Adding Section
     SignupScreen.classList.add("userCreationForm");
     exitout.classList.add("exitoutofframe");
     exitout.classList.add("sign");
@@ -206,19 +208,22 @@ function showSignupScreen(event) {
     passwordSection.classList.add("passwordSection");
     passInput.classList.add("form-control");
     passInput.classList.add("sign");
+    passInput.classList.add("pass");
     passFloatText.classList.add("floating-label");
+    passShowButton.classList.add("passShowButton");
     // * Recheck Password
     // TODO Must create button to allow user to see what they're typing
     passwordSection2.classList.add("passwordSection");
     passInput2.classList.add("form-control");
     passInput2.classList.add("sign");
+    passInput2.classList.add("pass");
     passFloatText2.classList.add("floating-label");
+    passShowButton2.classList.add("passShowButton");
     // * Prev Next Buttons Sections
     SubmitbuttonContainer.classList.add("submit-button-container");
     submitBtn.classList.add("submit-button");
     submitBtn.classList.add("sign");
     submitButtonText.classList.add("login-text");
-
     // * Options Section
     optionToDiv.classList.add("options-section");
     optionToDiv.classList.add("sign");
@@ -233,7 +238,6 @@ function showSignupScreen(event) {
     // * Give focus to Input Sections not just Input
     SignupScreen.appendChild(exitout);
     submitBtn.appendChild(submitButtonText);
-
     SubmitbuttonContainer.appendChild(submitBtn);
     // * Login Section
     loginSection.appendChild(loginInput);
@@ -241,9 +245,11 @@ function showSignupScreen(event) {
     // * Password Section
     passwordSection.appendChild(passInput);
     passwordSection.appendChild(passFloatText);
+    passwordSection.appendChild(passShowButton);
     // * Password2 Section
     passwordSection2.appendChild(passInput2);
     passwordSection2.appendChild(passFloatText2);
+    passwordSection2.appendChild(passShowButton2);
     // * Form Section
     userCreationForm.appendChild(loginSection);
     userCreationForm.appendChild(passwordSection);
@@ -256,7 +262,6 @@ function showSignupScreen(event) {
     signInButtonsSection.appendChild(facebookButton);
     signInButtonsSection.appendChild(googleButton);
     forgetPasswordLink.appendChild(passwordResetHyperlink);
-
     submitBtn.addEventListener("click", CREATEFUNCTIONHERE);
     exitout.addEventListener("click", removeForm);
     // * Main Sign up Screen
@@ -265,8 +270,24 @@ function showSignupScreen(event) {
     SignupScreen.appendChild(signInButtonsSection);
     SignupScreen.appendChild(forgetPasswordLink);
     introSection.appendChild(SignupScreen);
+    passShowButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        if (passInput.type == "password") {
+            passInput.type = "none";
+        } else {
+            passInput.type = "password";
+        }
+    });
+    passShowButton2.addEventListener("click", (event) => {
+        event.preventDefault();
+        if (passInput2.type == "password") {
+            passInput2.type = "none";
+        } else {
+            passInput2.type = "password";
+        }
+    });
     loginInput.addEventListener("blur", (event) => {
-        console.log(loginInput.value);
+        // console.log(loginInput.value);
         if (loginInput.value == "") {
             loginFloatText.classList.remove("valid");
         } else if (loginInput.value != "") {
@@ -274,7 +295,7 @@ function showSignupScreen(event) {
         }
     });
     passInput.addEventListener("blur", (event) => {
-        console.log(passInput.value);
+        // console.log(passInput.value);
         if (passInput.value == "") {
             passFloatText.classList.remove("valid");
         } else if (passInput.value != "") {
@@ -282,15 +303,45 @@ function showSignupScreen(event) {
         }
     });
     passInput2.addEventListener("blur", (event) => {
-        console.log(passInput2.value);
+        // console.log(passInput.value);
         if (passInput2.value == "") {
             passFloatText2.classList.remove("valid");
         } else if (passInput2.value != "") {
             passFloatText2.classList.add("valid");
         }
     });
+    passInput2.addEventListener("blur", (event) => {
+        // console.log(passInput2.value);
+        if (passInput2.value == passInput.value) {
+            passInput.classList.remove("not-matched");
+            passInput2.classList.remove("not-matched");
+        } else if (
+            passInput2.value != "" &&
+            passInput2.value != passInput.value
+        ) {
+            console.log("not matched");
+            passInput.classList.add("not-matched");
+            passInput2.classList.add("not-matched");
+        }
+    });
+    passInput.addEventListener("blur", (event) => {
+        // console.log(passInput2.value);
+        if (passInput.value == passInput2.value) {
+            passInput.classList.remove("not-matched");
+            passInput2.classList.remove("not-matched");
+        } else if (
+            passInput.value != "" &&
+            passInput.value != passInput2.value &&
+            passInput2.value != ""
+        ) {
+            console.log("not matched");
+            passInput.classList.add("not-matched");
+            passInput2.classList.add("not-matched");
+        }
+    });
     submitBtn.addEventListener("click", (event) => {
         // * Section Removal
+
         signInButtonsSection.style.display = "none";
         optionToDiv.style.display = "none";
         forgetPasswordLink.style.display = "none";
@@ -588,33 +639,45 @@ function showSignupScreen(event) {
         previousButtonText.classList.add("previous-text");
         previousBtn.addEventListener("click", (event) => {
             event.preventDefault();
+            loginSection.style.display = "flex";
+            passwordSection.style.display = "flex";
+            passwordSection2.style.display = "flex";
+            submitBtn.style.display = "flex";
+            trueSubmitBtn.style.display = "none";
+            previousBtn.style.display = "none";
+            firstNameSection.style.display = "none";
+            lastNameSection.style.display = "none";
+            countrySection.style.display = "none";
+            console.log(loginInput.value);
+            console.log(passInput.value);
             console.log("works");
             // TODO Needs to run to previous survey must include user info already
         });
-        // * Paginator 1 Button Section
-        let paginationContainer = document.createElement("div");
-        let roundIndicator = document.createElement("span");
-        roundIndicator.innerText = "1";
-        roundIndicator.classList.add("dot");
-        roundIndicator.classList.add("sign");
-        roundIndicator.addEventListener("click", (event) => {
-            event.preventDefault();
-            console.log("works");
-            // TODO Needs to implement pagination must include user info already
-        });
-        // * Paginator 2 Button Section
-        let roundIndicator2 = document.createElement("span");
-        roundIndicator2.innerText = "2";
-        roundIndicator2.classList.add("dot");
-        roundIndicator2.classList.add("sign");
-        roundIndicator2.addEventListener("click", (event) => {
-            event.preventDefault();
-            console.log("works");
-            // TODO Needs to implement pagination must include user info already
-        });
-        // * Paginator Container
-        paginationContainer.classList.add("pagination-container");
-        paginationContainer.classList.add("sign");
+        // // * Paginator 1 Button Section
+
+        // let paginationContainer = document.createElement("div");
+        // let roundIndicator = document.createElement("span");
+        // roundIndicator.innerText = "1";
+        // roundIndicator.classList.add("dot");
+        // roundIndicator.classList.add("sign");
+        // roundIndicator.addEventListener("click", (event) => {
+        //     event.preventDefault();
+        //     console.log("works");
+        //     // TODO Needs to implement pagination must include user info already
+        // });
+        // // * Paginator 2 Button Section
+        // let roundIndicator2 = document.createElement("span");
+        // roundIndicator2.innerText = "2";
+        // roundIndicator2.classList.add("dot");
+        // roundIndicator2.classList.add("sign");
+        // roundIndicator2.addEventListener("click", (event) => {
+        //     event.preventDefault();
+        //     console.log("works");
+        //     // TODO Needs to implement pagination must include user info already
+        // });
+        // // * Paginator Container
+        // paginationContainer.classList.add("pagination-container");
+        // paginationContainer.classList.add("sign");
         // paginationContainer.appendChild(roundIndicator);
         // paginationContainer.appendChild(roundIndicator2);
         // SignupScreen.appendChild(paginationContainer);
@@ -634,10 +697,10 @@ function showSignupScreen(event) {
         previousBtn.appendChild(previousButtonText);
         SubmitbuttonContainer.appendChild(previousBtn);
 
-        // * Pagination Displayer
-        paginationContainer.appendChild(roundIndicator);
-        paginationContainer.appendChild(roundIndicator2);
-        SignupScreen.appendChild(paginationContainer);
+        // // * Pagination Displayer
+        // paginationContainer.appendChild(roundIndicator);
+        // paginationContainer.appendChild(roundIndicator2);
+        // SignupScreen.appendChild(paginationContainer);
         // * Form Section
         userCreationForm.appendChild(firstNameSection);
         userCreationForm.appendChild(lastNameSection);
