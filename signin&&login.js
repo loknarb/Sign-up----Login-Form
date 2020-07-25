@@ -638,16 +638,40 @@ function showSignupScreen(event) {
         previousBtn.classList.add("sign");
         previousButtonText.classList.add("previous-text");
         previousBtn.addEventListener("click", (event) => {
+            let nextBtn = document.createElement("button");
+            let nextBtnText = document.createElement("div");
+            nextBtn.innerHTML =
+                '<svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512" class="svg-inline--fa fa-angle-right fa-w-6 fa-3x"><path fill="currentColor" d="M166.9 264.5l-117.8 116c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17L127.3 256 25.1 155.6c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0l117.8 116c4.6 4.7 4.6 12.3-.1 17z" class=""></path></svg>';
+
+            nextBtn.classList.add("submit-button");
+            nextBtn.classList.add("sign");
+            nextBtnText.classList.add("login-text");
+            nextBtnText.innerText = "Next";
             event.preventDefault();
             loginSection.style.display = "flex";
             passwordSection.style.display = "flex";
             passwordSection2.style.display = "flex";
-            submitBtn.style.display = "flex";
+
             trueSubmitBtn.style.display = "none";
             previousBtn.style.display = "none";
             firstNameSection.style.display = "none";
             lastNameSection.style.display = "none";
             countrySection.style.display = "none";
+
+            // * Next Button Section
+            nextBtn.appendChild(nextBtnText);
+            SubmitbuttonContainer.appendChild(nextBtn);
+            nextBtn.addEventListener("click", (event) => {
+                firstNameSection.style.display = "flex";
+                lastNameSection.style.display = "flex";
+                countrySection.style.display = "flex";
+                trueSubmitBtn.style.display = "flex";
+                previousBtn.style.display = "flex";
+                loginSection.style.display = "none";
+                passwordSection.style.display = "none";
+                passwordSection2.style.display = "none";
+                nextBtn.remove();
+            });
             console.log(loginInput.value);
             console.log(passInput.value);
             console.log("works");
